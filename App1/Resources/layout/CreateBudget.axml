@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1">
+    
+    <EditText
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:inputType="numberDecimal"
+        p1:id="@+id/txtCreateBudget_Amount" />
+    
+    <DatePicker
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:background="#000000"
+        p1:datePickerMode="spinner"
+        p1:calendarViewShown="false"
+        p1:id="@+id/dateCreateBudget_Month" />
+    
+    <Spinner 
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/drdCreateBudget_Category"/>
+    
+    <Button
+        p1:gravity="bottom"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:text="Save"
+        p1:id="@+id/btnCreateBudget_Save"/>
+    <Button
+        p1:gravity="bottom"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:text="Cancel"
+        p1:id="@+id/btnCreateBudget_Cancel"/>
+    
+</LinearLayout>

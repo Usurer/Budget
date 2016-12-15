@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1" >
+    
+    <!-- Add transaction -->
+    <!--<LinearLayout></LinearLayout>-->
+    <!-- End Add transaction -->
+    
+    <Button
+            p1:gravity="bottom"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:text="Add Transaction"
+            p1:id="@+id/btnAddTransaction"/>
+    
+    <!-- Categories -->
+    <LinearLayout 
+        p1:orientation="vertical"
+        p1:layout_width="match_parent"
+        p1:layout_height="match_parent"
+        p1:layout_weight="1"
+        p1:gravity="bottom"
+        p1:id="@+id/containerCategories">
+    </LinearLayout>
+    <!-- End Categories -->
+    
+    <Button
+            p1:gravity="bottom"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:text="Add Category"
+            p1:id="@+id/btnAddCategory"/>
+    
+    <Button
+            p1:gravity="bottom"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:text="Add Budget"
+            p1:id="@+id/btnAddBudget"/>
+    
+    <Button
+            p1:gravity="bottom"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:text="Clean DB"
+            p1:id="@+id/btnCleanDb"/>
+    
+    </LinearLayout>
