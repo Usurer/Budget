@@ -10,19 +10,19 @@
     <EditText
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/txtCreateCategory_Name" />
+        p1:id="@+id/txtName" />
     
     <Button
         p1:gravity="bottom"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:text="Save"
-        p1:id="@+id/btnCreateCategory_Save"/>
+        p1:id="@+id/btnSave"/>
     <Button
         p1:gravity="bottom"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:text="Cancel"
-        p1:id="@+id/btnCreateCategory_Cancel"/>
+        p1:id="@+id/btnCancel"/>
     
 </LinearLayout>

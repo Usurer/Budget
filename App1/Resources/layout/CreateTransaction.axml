@@ -11,7 +11,7 @@
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:inputType="numberDecimal"
-        p1:id="@+id/txtCreateTransaction_Amount" />
+        p1:id="@+id/txtAmount" />
     
     <DatePicker
         p1:layout_width="match_parent"
@@ -19,24 +19,24 @@
         p1:background="#000000"
         p1:datePickerMode="spinner"
         p1:calendarViewShown="false"
-        p1:id="@+id/dateCreateTransaction_Month" />
+        p1:id="@+id/dateDay" />
     
     <Spinner 
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/drdCreateTransaction_Category"/>
+        p1:id="@+id/spnCategory"/>
     
     <Button
         p1:gravity="bottom"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:text="Save"
-        p1:id="@+id/btnCreateTransaction_Save"/>
+        p1:id="@+id/btnSave"/>
     <Button
         p1:gravity="bottom"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:text="Cancel"
-        p1:id="@+id/btnCreateTransaction_Cancel"/>
+        p1:id="@+id/btnCancel"/>
     
 </LinearLayout>
