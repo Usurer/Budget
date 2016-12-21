@@ -78,10 +78,12 @@
     <Compile Include="Activities\CreateTransactionActivity.cs" />
     <Compile Include="Activities\CreateBudgetActivity.cs" />
     <Compile Include="Activities\CreateCategoryActivity.cs" />
+    <Compile Include="Adapters\CategoryBudgetListAdapter.cs" />
     <Compile Include="CategoryArrayAdapter.cs" />
     <Compile Include="DAL\DbAccess.cs" />
     <Compile Include="Entities\Budget.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\CategoryBudget.cs" />
     <Compile Include="Entities\Period.cs" />
     <Compile Include="Entities\Transaction.cs" />
     <Compile Include="Activities\MainActivity.cs" />
@@ -103,6 +105,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\CreateTransaction.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Main_CategoryListViewItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

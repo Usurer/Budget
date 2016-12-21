@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Android.App;
 using Android.Widget;
@@ -8,6 +9,7 @@ using App1.DAL;
 using App1.Entities;
 using System.Linq;
 using Android.Content;
+using App1.Adapters;
 
 namespace App1.Activities
 {
@@ -62,31 +64,55 @@ namespace App1.Activities
 
             container.RemoveAllViews();
 
+            var categoryBudgets = new List<CategoryBudget>();
+
             foreach (var category in categories)
             {
-                var view = new Button(this.BaseContext);
-                view.Text = category.Name;
-                view.Gravity = Android.Views.GravityFlags.Top;
+                var budget = dbAccess.GetBudgets().FirstOrDefault(x => x.CategoryId == category.Id) 
+                    ?? new Budget { Amount = 0 };
 
-                var budget = dbAccess.GetBudgets().FirstOrDefault(x => x.CategoryId == category.Id);
-                var spend = 0f;
-                
                 // Getting transactions for current category and month
                 var categoryTransactions = transactions.Where(x => x.CategoryId == category.Id && x.Date.Month == DateTime.Now.Month);
-                foreach(var t in categoryTransactions)
+                foreach (var t in categoryTransactions)
                 {
-                    spend = spend + t.Amount;
+                    budget.Amount = budget.Amount - t.Amount;
                 }
 
-                view.Text = view.Text + " " + spend;
-
-                if (budget != null)
+                categoryBudgets.Add(new CategoryBudget
                 {
-                    view.Text = view.Text + " / " + budget.Amount.ToString(CultureInfo.InvariantCulture);
-                }
-
-                container.AddView(view);
+                    Category = category,
+                    Budget = budget,
+                });
             }
+
+            var list = FindViewById<ListView>(Resource.Id.list);
+            list.Adapter = new CategoryBudgetListAdapter(this, categoryBudgets);
+
+            //foreach (var category in categories)
+            //{
+            //    var view = new Button(this.BaseContext);
+            //    view.Text = category.Name;
+            //    view.Gravity = Android.Views.GravityFlags.Top;
+
+            //    var budget = dbAccess.GetBudgets().FirstOrDefault(x => x.CategoryId == category.Id);
+            //    var spend = 0f;
+                
+            //    // Getting transactions for current category and month
+            //    var categoryTransactions = transactions.Where(x => x.CategoryId == category.Id && x.Date.Month == DateTime.Now.Month);
+            //    foreach(var t in categoryTransactions)
+            //    {
+            //        spend = spend + t.Amount;
+            //    }
+
+            //    view.Text = view.Text + " " + spend;
+
+            //    if (budget != null)
+            //    {
+            //        view.Text = view.Text + " / " + budget.Amount.ToString(CultureInfo.InvariantCulture);
+            //    }
+
+            //    container.AddView(view);
+            //}
         }
 
         private void BtnCleanDb_Click(object sender, EventArgs e)

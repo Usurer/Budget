@@ -11,6 +11,11 @@
     <!--<LinearLayout></LinearLayout>-->
     <!-- End Add transaction -->
     
+    <ListView
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/list"/>
+    
     <Button
             p1:gravity="bottom"
             p1:layout_width="match_parent"

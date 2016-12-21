@@ -62,26 +62,26 @@ namespace App1
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f05000c
+			public const int btnAddBudget = 2131034124;
+			
 			// aapt resource value: 0x7f05000b
-			public const int btnAddBudget = 2131034123;
+			public const int btnAddCategory = 2131034123;
 			
-			// aapt resource value: 0x7f05000a
-			public const int btnAddCategory = 2131034122;
-			
-			// aapt resource value: 0x7f050008
-			public const int btnAddTransaction = 2131034120;
+			// aapt resource value: 0x7f050009
+			public const int btnAddTransaction = 2131034121;
 			
 			// aapt resource value: 0x7f050005
 			public const int btnCancel = 2131034117;
 			
-			// aapt resource value: 0x7f05000c
-			public const int btnCleanDb = 2131034124;
+			// aapt resource value: 0x7f05000d
+			public const int btnCleanDb = 2131034125;
 			
 			// aapt resource value: 0x7f050004
 			public const int btnSave = 2131034116;
 			
-			// aapt resource value: 0x7f050009
-			public const int containerCategories = 2131034121;
+			// aapt resource value: 0x7f05000a
+			public const int containerCategories = 2131034122;
 			
 			// aapt resource value: 0x7f050007
 			public const int dateDay = 2131034119;
@@ -92,8 +92,17 @@ namespace App1
 			// aapt resource value: 0x7f050000
 			public const int linearLayout1 = 2131034112;
 			
+			// aapt resource value: 0x7f050008
+			public const int list = 2131034120;
+			
 			// aapt resource value: 0x7f050003
 			public const int spnCategory = 2131034115;
+			
+			// aapt resource value: 0x7f05000e
+			public const int text1 = 2131034126;
+			
+			// aapt resource value: 0x7f05000f
+			public const int text2 = 2131034127;
 			
 			// aapt resource value: 0x7f050001
 			public const int txtAmount = 2131034113;
@@ -125,6 +134,9 @@ namespace App1
 			
 			// aapt resource value: 0x7f030003
 			public const int Main = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int Main_CategoryListViewItem = 2130903044;
 			
 			static Layout()
 			{
