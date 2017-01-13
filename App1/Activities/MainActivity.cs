@@ -57,12 +57,9 @@ namespace App1.Activities
 
         private void LoadCategories()
         {
-            var container = FindViewById<LinearLayout>(Resource.Id.containerCategories);
             var dbAccess = new DbAccess();
             var categories = dbAccess.GetCategories();
             var transactions = dbAccess.GetTransactions();
-
-            container.RemoveAllViews();
 
             var categoryBudgets = new List<CategoryBudget>();
 
@@ -87,32 +84,6 @@ namespace App1.Activities
 
             var list = FindViewById<ListView>(Resource.Id.list);
             list.Adapter = new CategoryBudgetListAdapter(this, categoryBudgets);
-
-            //foreach (var category in categories)
-            //{
-            //    var view = new Button(this.BaseContext);
-            //    view.Text = category.Name;
-            //    view.Gravity = Android.Views.GravityFlags.Top;
-
-            //    var budget = dbAccess.GetBudgets().FirstOrDefault(x => x.CategoryId == category.Id);
-            //    var spend = 0f;
-                
-            //    // Getting transactions for current category and month
-            //    var categoryTransactions = transactions.Where(x => x.CategoryId == category.Id && x.Date.Month == DateTime.Now.Month);
-            //    foreach(var t in categoryTransactions)
-            //    {
-            //        spend = spend + t.Amount;
-            //    }
-
-            //    view.Text = view.Text + " " + spend;
-
-            //    if (budget != null)
-            //    {
-            //        view.Text = view.Text + " / " + budget.Amount.ToString(CultureInfo.InvariantCulture);
-            //    }
-
-            //    container.AddView(view);
-            //}
         }
 
         private void BtnCleanDb_Click(object sender, EventArgs e)

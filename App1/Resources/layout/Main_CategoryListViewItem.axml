@@ -2,18 +2,25 @@
 <LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
     p1:orientation="horizontal"
     p1:layout_width="match_parent"
-    p1:layout_height="match_parent">
+    p1:layout_height="match_parent"
+    p1:paddingBottom="5dp"
+    p1:paddingTop="5dp">
     
     <TextView 
         p1:id="@+id/text1"
         p1:layout_width="wrap_content"
         p1:layout_height="match_parent"
+        p1:layout_weight="2"
+        p1:fontFamily="Arial"
         />
     <TextView 
         p1:id="@+id/text2"
         p1:layout_width="wrap_content"
         p1:layout_height="match_parent"
         p1:textColor="#118811"
+        p1:gravity="right"
+        p1:layout_weight="3"
+        
         />
 
 </LinearLayout>

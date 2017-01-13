@@ -4,55 +4,76 @@
     p1:minWidth="25px"
     p1:minHeight="25px"
     p1:layout_width="match_parent"
-    p1:layout_height="match_parent"
+    p1:layout_height="wrap_content"
     p1:id="@+id/linearLayout1" >
     
     <!-- Add transaction -->
     <!--<LinearLayout></LinearLayout>-->
     <!-- End Add transaction -->
     
-    <ListView
-        p1:layout_width="match_parent"
-        p1:layout_height="wrap_content"
-        p1:id="@+id/list"/>
+    <!-- I'm wrapping ListView and buttons into separate Linear layouts to split screen into two equal parts.
+        If i remowe these wrappers, ListView will take all the place as soon as it will have enough content. 
+        Setting weight is important here.
+        I do not understand how it works though.-->
     
-    <Button
+    <!--TODO: Understand how Weight works --> 
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:layout_width="fill_parent"
+        p1:layout_height="wrap_content"
+        p1:layout_weight="10"
+        >
+        
+        <ListView
+            p1:layout_width="match_parent"
+            p1:layout_height="match_parent"
+            p1:paddingTop="20dp"
+            p1:paddingBottom="20dp"
+            p1:paddingLeft="20dp"
+            p1:paddingRight="20dp"
+            p1:id="@+id/list"/>
+        
+    </LinearLayout>
+        
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:layout_width="fill_parent"
+        p1:layout_height="fill_parent"
+        p1:layout_weight="0"
+        p1:gravity="bottom">
+        
+        <Button
             p1:gravity="bottom"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
             p1:text="Add Transaction"
-            p1:id="@+id/btnAddTransaction"/>
+            p1:id="@+id/btnAddTransaction"
+            p1:layout_weight="3"/>
     
-    <!-- Categories -->
-    <LinearLayout 
-        p1:orientation="vertical"
-        p1:layout_width="match_parent"
-        p1:layout_height="match_parent"
-        p1:layout_weight="1"
-        p1:gravity="bottom"
-        p1:id="@+id/containerCategories">
-    </LinearLayout>
-    <!-- End Categories -->
-    
-    <Button
+        <Button
             p1:gravity="bottom"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
             p1:text="Add Category"
-            p1:id="@+id/btnAddCategory"/>
+            p1:id="@+id/btnAddCategory"
+            p1:layout_weight="3"/>
     
-    <Button
+        <Button
             p1:gravity="bottom"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
             p1:text="Add Budget"
-            p1:id="@+id/btnAddBudget"/>
+            p1:id="@+id/btnAddBudget"
+            p1:layout_weight="3"/>
     
-    <Button
+        <Button
             p1:gravity="bottom"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
             p1:text="Clean DB"
-            p1:id="@+id/btnCleanDb"/>
+            p1:id="@+id/btnCleanDb"
+            p1:layout_weight="3"/>
     
     </LinearLayout>
+    
+</LinearLayout>
