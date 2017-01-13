@@ -21,9 +21,8 @@
         p1:orientation="vertical"
         p1:layout_width="fill_parent"
         p1:layout_height="wrap_content"
-        p1:layout_weight="10"
+        p1:layout_weight="1"
         >
-        
         <ListView
             p1:layout_width="match_parent"
             p1:layout_height="match_parent"
