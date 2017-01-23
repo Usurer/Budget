@@ -53,6 +53,35 @@ namespace App1.Activities
             BtnCleanDb.Click += BtnCleanDb_Click;
 
             LoadCategories();
+            LoadBudget();
+        }
+
+        private void LoadBudget()
+        {
+            var dbAccess = new DbAccess();
+            var budgets = dbAccess.GetBudgets();
+            var period = dbAccess.GetPeriods().Where(x => x.Start <= DateTime.Now && x.End >= DateTime.Now).SingleOrDefault();
+            if (period == null)
+            {
+                return;
+            }
+
+            var allBudgetsForPeriod = budgets.Where(x => x.PeriodId == period.Id).ToList();
+            if(!allBudgetsForPeriod.Any())
+            {
+                return;
+            }
+
+            var total = allBudgetsForPeriod.Sum(x => x.Amount);
+
+            var transactions = dbAccess.GetTransactions();
+            var spent = transactions.Where(x => x.Date >= period.Start && x.Date <= period.End).Sum(x => x.Amount);
+
+            var ctrlLeft = FindViewById<TextView>(Resource.Id.textBudgetLeft);
+            var ctrlTotal = FindViewById<TextView>(Resource.Id.textBudgetTotal);
+
+            ctrlLeft.Text = $"{total - spent} left of total ";
+            ctrlTotal.Text = $"{total} money in monthly budget";
         }
 
         private void LoadCategories()

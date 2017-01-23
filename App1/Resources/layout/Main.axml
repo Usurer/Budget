@@ -11,6 +11,30 @@
     <!--<LinearLayout></LinearLayout>-->
     <!-- End Add transaction -->
     
+    <LinearLayout
+        p1:orientation="horizontal"
+        p1:layout_width="fill_parent"
+        p1:layout_height="wrap_content"
+        p1:layout_weight="0"
+        p1:paddingLeft="20dp"
+        p1:paddingRight="20dp">
+        
+        <TextView 
+            p1:id="@+id/textBudgetLeft"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:fontFamily="Arial"
+            />
+        
+        <TextView 
+            p1:id="@+id/textBudgetTotal"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:fontFamily="Arial"
+            />
+        
+    </LinearLayout>
+    
     <!-- I'm wrapping ListView and buttons into separate Linear layouts to split screen into two equal parts.
         If i remowe these wrappers, ListView will take all the place as soon as it will have enough content. 
         Setting weight is important here.
